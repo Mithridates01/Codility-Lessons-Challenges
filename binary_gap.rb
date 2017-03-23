@@ -30,7 +30,7 @@ def solution(n)
 
   binary_string = decimal_to_binary(n)
   binary_gaps = collect_binary_gaps(binary_string)
-  sort_gaps(binary_gaps).first
+  sort_gaps(binary_gaps).last
 end
 
 
@@ -41,7 +41,7 @@ p binary_string
 gaps = collect_binary_gaps(binary_string)
 p gaps
 
-sorted_gaps = sort_gaps(gaps)
+sorted_gaps = sort_gaps([gaps])
 p sorted_gaps
 
 # puts solution(0)
