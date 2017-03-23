@@ -15,8 +15,14 @@ def collect_binary_gaps(binary_string)
   binary_string.scan(/1(0+)(?=1)/).flatten
 end
 
-def sort_gaps
+def sort_gaps(binary_gaps_array)
+  gap_lengths = []
   
+  binary_gaps_array.each do |gap|
+    gap_lengths << gap.length
+  end
+
+  gap_lengths.sort!
 end
 
 def solution(n)
@@ -29,10 +35,14 @@ end
 
 
 # TESTING CODE
-binary_string = decimal_to_binary(1402)
-# puts binary_string
+binary_string = decimal_to_binary(14020)
+p binary_string
 
-p collect_binary_gaps(binary_string)
+gaps = collect_binary_gaps(binary_string)
+p gaps
+
+sorted_gaps = sort_gaps(gaps)
+p sorted_gaps
 
 # puts solution(0)
 # puts solution(1)
