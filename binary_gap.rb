@@ -15,13 +15,16 @@ def collect_binary_gaps(binary_string)
   binary_string.scan(/1(0+)(?=1)/).flatten
 end
 
+def sort_gaps
+  
+end
+
 def solution(n)
   return 0 if n == 0
 
   binary_string = decimal_to_binary(n)
-  puts "binary #{binary_string}"
-
-  collect_binary_gaps(binary_string)
+  binary_gaps = collect_binary_gaps(binary_string)
+  sort_gaps(binary_gaps).first
 end
 
 
