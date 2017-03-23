@@ -13,6 +13,7 @@ end
 
 def collect_binary_gaps(binary_string)
   gap_list = binary_string.scan(/1(0+)(?=1)/)
+  puts gap_list
   gap_list.sort_by! {|x, y| x.length <=> y.length}
   gap_list[0].length
 end
@@ -27,11 +28,11 @@ def solution(n)
 end
 
 
+puts decimal_to_binary(1402)
 
-
-puts solution(0)
-puts solution(1)
-puts solution(2)
-puts solution(3)
-puts solution(10)
-puts solution(1041)
+# puts solution(0)
+# puts solution(1)
+# puts solution(2)
+# puts solution(3)
+# puts solution(10)
+# puts solution(1041)
