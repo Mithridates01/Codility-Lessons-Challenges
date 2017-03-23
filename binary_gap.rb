@@ -12,7 +12,7 @@ def decimal_to_binary(n)
 end
 
 def collect_binary_gaps(binary_string)
-  binary_string.scan(/1(0+)(?=1)/)
+  binary_string.scan(/1(0+)(?=1)/).flatten
 end
 
 def solution(n)
@@ -25,13 +25,15 @@ def solution(n)
 end
 
 
-# puts decimal_to_binary(1402)
+# TESTING CODE
+binary_string = decimal_to_binary(1402)
+# puts binary_string
 
-puts co
+p collect_binary_gaps(binary_string)
 
 # puts solution(0)
 # puts solution(1)
 # puts solution(2)
 # puts solution(3)
 # puts solution(10)
-puts solution(1041)
+# puts solution(1041)
