@@ -2,28 +2,25 @@
 // console.log('this is a debug message');
 
 //test array
-var testArray = [6,6,3,4,4,3,7,77,7,77,100,10000,100];
+var testArray = [6,6,3,4,6,4,3,7,4,77,7,77,100,10000,100,6,10000];
 
 function solution(array) {
-  //have two variables, one matched and one unmatched
-  //unmatched integer variable
-  //iterate over array of integers
-  //
+  // create empty storage array
+  var b = [];
 
+  // iterate through array
+  for (var i = 0; i < array.length; i++){
+    //
+    var index = b.indexOf(array[i]);
+
+    if (index > -1) {
+      b.splice(index, 1);
+    } else {
+      b.push(array[i]);
+    }
+  }
+  return b[0]
 }
 
 
-var result = solution(testArray);
-
-if (result === 10000){
-  console.log("true");
-}
-
-
-// input:
-// array of matched pairs of
-// integers with one unmatched integer
-
-// Output:
-// return a single unmatched integer
-
+console.log(solution(testArray));
