@@ -14,7 +14,7 @@ function solution(array, rotations) {
   var currentRotationElements;
 
   while (rotations > 0){
-    //prevent error if rotations are longer than the array
+    // prevent error if rotations are longer than the array
     if (rotations > array.length){
       rotateNum = rotations - array.length;
       rotations -= rotateNum;
@@ -22,6 +22,7 @@ function solution(array, rotations) {
       rotateNum = rotations;
       rotations -= rotateNum;
     }
+    // logic for the rotation
     currentRotationElements = array.splice(-rotateNum);
     array = currentRotationElements.concat(array);
   }
