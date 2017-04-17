@@ -9,7 +9,26 @@
 // repeat until rotations == 0
 // return new array
 
+function solution(array, rotations) {
+  var rotateNum;
+  var currentRotationElements;
 
+  while (rotations > 0){
+    console.log(rotations)
+    //prevent error if rotations are longer than the array
+    if (rotations > array.length){
+      rotateNum = rotations - array.length;
+      rotations -= rotateNum;
+    } else {
+      rotateNum = rotations;
+      rotations -= rotateNum;
+    }
+
+    currentRotationElements = array.splice(-rotateNum);
+    array = currentRotationElements.concat(array);
+  }
+  return array;
+}
 
 
 
